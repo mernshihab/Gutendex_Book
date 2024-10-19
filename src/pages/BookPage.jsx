@@ -16,7 +16,7 @@ const BookPage = () => {
     const fetchBook = async () => {
       try {
         const response = await axios.get(
-          `https://gutendex.com/books?ids=${id}`
+          `${import.meta.env.VITE_BACKEND_URL}?ids=${id}`
         );
         setBook(response.data.results[0]);
         // Check if the book is already in the wishlist

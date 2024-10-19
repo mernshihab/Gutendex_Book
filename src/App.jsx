@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Wishlist from "./pages/Wishlist";
 import BookPage from "./pages/BookPage";
-import Navbar from "./components/Navbar";
+import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";

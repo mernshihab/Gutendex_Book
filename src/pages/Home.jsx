@@ -15,7 +15,7 @@ const Home = () => {
   const [nextPage, setNextPage] = useState(null);
   const [prevPage, setPrevPage] = useState(null);
 
-  const fetchBooks = async (url = "https://gutendex.com/books") => {
+  const fetchBooks = async (url = `${import.meta.env.VITE_BACKEND_URL}`) => {
     const response = await axios.get(url);
     setBooks(response.data.results);
     setNextPage(response.data.next);
