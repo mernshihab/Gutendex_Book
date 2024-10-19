@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import BookList from "../components/BookList";
+import BookList from "../Components/BookList";
 import Loading from "../Components/Loading";
 
 const Home = () => {
