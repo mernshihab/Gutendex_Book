@@ -20,6 +20,7 @@ const Home = () => {
     setBooks(response.data.results);
     setNextPage(response.data.next);
     setPrevPage(response.data.previous);
+    window.scrollTo(0, 0);
 
     const allGenres = response.data.results.flatMap((book) => book.subjects);
     setGenres([...new Set(allGenres)]);

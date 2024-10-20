@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -25,11 +25,11 @@ const BookCard = ({ book }) => {
   return (
     <div
       data-aos="zoom-in-up"
-      className="border shadow-md bg-white rounded-md p-3"
+      className="border overflow-hidden shadow-md bg-white rounded-md p-3"
     >
       <Link to={`/book/${book.id}`}>
         <img
-          className="w-full shadow h-[300px] rounded-t-sm md:h-80"
+          className="w-full hover:scale-105 duration-300 shadow h-[300px] rounded-t-md md:h-80"
           src={book.formats["image/jpeg"]}
           alt={book.title}
         />

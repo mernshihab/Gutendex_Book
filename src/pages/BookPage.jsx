@@ -10,7 +10,6 @@ const BookPage = () => {
   const [loading, setLoading] = useState(true);
   const [wishlisted, setWishlisted] = useState(false);
 
-  // Fetch the book data by ID
   useEffect(() => {
     window.scrollTo(0, 0);
     const fetchBook = async () => {
@@ -19,7 +18,6 @@ const BookPage = () => {
           `${import.meta.env.VITE_BACKEND_URL}?ids=${id}`
         );
         setBook(response.data.results[0]);
-        // Check if the book is already in the wishlist
         const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
         setWishlisted(
           wishlist.some((item) => item.id === response.data.results[0].id)
@@ -33,15 +31,12 @@ const BookPage = () => {
     fetchBook();
   }, [id]);
 
-  // Toggle wishlist status
   const toggleWishlist = () => {
     const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
     if (wishlisted) {
-      // Remove book from wishlist
       const updatedWishlist = wishlist.filter((item) => item.id !== book.id);
       localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
     } else {
-      // Add book to wishlist
       wishlist.push(book);
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
     }
